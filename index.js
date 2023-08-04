@@ -16,10 +16,9 @@ app.use((req, res, next) => {
   res.send("<h1>Sorry we have an Error 404!</h1>");
 });
 
-mongoose
-  .connect(process.env.URI)
+mongoose.connect(process.env.uri)
   .then((valueDB) => {
-    console.log("Connected to DB");
+    console.log("Connected to DB",process.env.uri);
     app.listen(process.env.PORT, () => {
       console.log("Address is http://localhost:" + process.env.PORT);
     });
@@ -27,16 +26,3 @@ mongoose
   .catch((reson) => {
     console.log(reson);
   });
-/*
-mongoose.connect(process.env.URI, (error) => {
-  if (error) {
-    console.log("Connection to DB failed");
-    console.log(error);
-  } else {
-    console.log("Connected to DB");
-    app.listen(process.env.PORT, () => {
-      console.log("Address is http://localhost:" + process.env.PORT);
-    });
-  }
-});
-*/
