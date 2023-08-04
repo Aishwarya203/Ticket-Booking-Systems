@@ -6,7 +6,7 @@ const router = express.Router();
 
 // GET REQUEST
 
-router.get("/book", screenOneContainer.getHomepage);
+router.get("/book", screenOneController.getHomepage);
 
 // POST REQUEST
 
