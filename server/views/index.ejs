@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theater</title>
+  </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+    }
+    .centring {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-right: 1px solid black;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="centring">
+        <h2>Welcome to Screen One</h2>
+        <p>Enter Seat Number you want to Book.</p>
+        <form action="/bookseat1" method="post">
+          <input type="text" name="number" id="" />
+          <button type="submit">Book</button>
+        </form>
+
+        <h4>Enter Seat number to cancel Booking</h4>
+        <form action="/cancelseat1" method="post">
+          <input type="text" name="number" id="" />
+          <button type="submit">Cancel</button>
+        </form>
+
+        <h4>Number of Seats available - <%= 45 - val1.length %></h4>
+
+        <h2>Already Booked Seats</h2>
+        <ul>
+          <% val1.forEach(function(item) { %>
+          <li>
+            <%= item.bookSeat %> <i><b>ID</b></i> - <b> <%= item._id %> </b>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <!-- Screen Two -->
+
+      <div class="centring">
+        <h2>Welcome to Screen Two</h2>
+        <p>Enter Seat Number you want to Book.</p>
+        <form action="/bookseat2" method="post">
+          <input type="text" name="numbertwo" id="" />
+          <button type="submit">Book</button>
+        </form>
+        <h4>Enter Seat number to cancel Booking</h4>
+        <form action="/cancelseat2" method="post">
+          <input type="text" name="numbertwo" id="" />
+          <button type="submit">Cancel</button>
+        </form>
+        <h4>Number of Seats available - <%= 60 - val2.length %></h4>
+
+        <h2>Already Booked Seats</h2>
+        <ul>
+          <% val2.forEach(function(item) { %>
+          <li>
+            <%= item.bookSeat %> <i><b>ID</b></i> - <b> <%= item._id %> </b>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <!-- Screen Three -->
+
+      <div class="centring">
+        <h2>Welcome to Screen Three</h2>
+        <p>Enter Seat Number you want to Book.</p>
+        <form action="/bookseat3" method="post">
+          <input type="text" name="numberthree" id="" />
+          <button type="submit">Book</button>
+        </form>
+
+        <h4>Enter Seat number to cancel Booking</h4>
+        <form action="/cancelseat3" method="post">
+          <input type="text" name="numberthree" id="" />
+          <button type="submit">Cancel</button>
+        </form>
+        <h4>Number of Seats available - <%= 75 - val3.length %></h4>
+
+        <h2>Already Booked Seats</h2>
+        <ul>
+          <% val3.forEach(function(item) { %>
+          <li>
+            <%= item.bookSeat %> <i><b>ID</b></i> - <b> <%= item._id %> </b>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
